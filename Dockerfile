@@ -6,7 +6,7 @@ COPY lib/tzupdater.jar ./lib/tzupdater.jar
 RUN mvn clean package -DskipTests
 
 
-FROM openjdk:17.0.8-jdk-slim
+FROM openjdk:17.0.6-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/wado-ichimonji-*.jar wado.jar
 COPY --from=build /app/lib/tzupdater.jar tzupdater.jar
